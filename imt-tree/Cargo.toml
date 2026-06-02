@@ -11,7 +11,7 @@ anyhow = "1.0"
 ff = "0.13"
 hex = "0.4"
 pasta_curves = "0.5"
-halo2_gadgets = { version = "0.4", default-features = false }
+halo2_gadgets = { version = "0.5", default-features = false }
 rayon = "1"
 
 [dev-dependencies]
@@ -21,3 +21,6 @@ rand = "0.8"
 [[bench]]
 name = "tree_build"
 harness = false
+
+[patch.crates-io]
+halo2_gadgets = { package = "halo2_gadgets", git = "https://github.com/zodl-inc/halo2-security-fixes.git", rev = "d751768afe0d2105b349dd93f73fde7f2eade088" }
