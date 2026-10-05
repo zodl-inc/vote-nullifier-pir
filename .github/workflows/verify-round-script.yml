@@ -1,11 +1,7 @@
 name: Round verification script
 on:
-  pull_request:
-    paths:
-      - 'scripts/verify-round-imt.sh'
-      - 'scripts/verify_round_imt.py'
-      - 'scripts/test_verify_round_imt.py'
-      - '.github/workflows/verify-round-script.yml'
+  # Called by test.yml on every pull request, so that it gates merges.
+  workflow_call:
   push:
     branches: [main]
     paths:
